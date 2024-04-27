@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Processed Images</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .image-list {
+            list-style: none;
+            padding: 0;
+        }
+        .image-list li {
+            margin-bottom: 10px;
+        }
+        .download-link {
+            color: #007bff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Processed Images</h1>
+    <ul class="image-list">
+        {% for filename in processed_image_filenames %}
+            <li>
+                <a class="download-link" href="{{ url_for('download', filename=filename) }}">{{ filename }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
